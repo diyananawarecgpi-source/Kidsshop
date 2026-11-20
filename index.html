@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LittleNest | Kids Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">🧸 LittleNest</a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button onclick="toggleCart()">🛒 Cart <span id="cart-count">0</span></button>
+    <button onclick="login()">👤 Login</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">WELCOME TO LITTLE NEST</span>
+    <h1>Little Things,<br><span>Big Happiness!</span></h1>
+    <p>Discover adorable clothes, toys and essentials for your little ones.</p>
+    <a href="#products" class="primary-btn">Shop Now →</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" alt="Happy child">
+  </div>
+</section>
+
+<section class="features">
+  <div>🚚 <b>Free Delivery</b><small>On orders above ₹999</small></div>
+  <div>🔒 <b>Secure Shopping</b><small>Safe checkout</small></div>
+  <div>💝 <b>Best Quality</b><small>Made for little ones</small></div>
+  <div>↩️ <b>Easy Returns</b><small>Hassle-free shopping</small></div>
+</section>
+
+<section class="section" id="categories">
+  <div class="section-heading">
+    <span>EXPLORE OUR COLLECTION</span>
+    <h2>Shop By Category</h2>
+  </div>
+  <div class="categories">
+    <div class="category" onclick="filterCategory('Clothing')">👕<h3>Clothing</h3></div>
+    <div class="category" onclick="filterCategory('Toys')">🧸<h3>Toys</h3></div>
+    <div class="category" onclick="filterCategory('Footwear')">👟<h3>Footwear</h3></div>
+    <div class="category" onclick="filterCategory('Accessories')">🎒<h3>Accessories</h3></div>
+  </div>
+</section>
+
+<section class="section products-section" id="products">
+  <div class="section-heading">
+    <span>MADE WITH LOVE ❤️</span>
+    <h2>Our Best Products</h2>
+  </div>
+  <div class="filters">
+    <input type="search" id="search" placeholder="Search kids products..." oninput="renderProducts()">
+    <select id="category-filter" onchange="renderProducts()">
+      <option value="All">All Products</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Toys">Toys</option>
+      <option value="Footwear">Footwear</option>
+      <option value="Accessories">Accessories</option>
+    </select>
+  </div>
+  <div class="product-grid" id="product-list"></div>
+</section>
+
+<section class="offer">
+  <div>
+    <span>LIMITED TIME OFFER</span>
+    <h2>Make Childhood More Colorful!</h2>
+    <p>Special shopping collection for your little stars.</p>
+    <a href="#products" class="primary-btn">Explore Now</a>
+  </div>
+  <div class="offer-emoji">🎁🧸🎈</div>
+</section>
+
+<section class="section about" id="about">
+  <div class="section-heading">
+    <span>OUR LITTLE STORY</span>
+    <h2>Why Choose LittleNest?</h2>
+  </div>
+  <p>LittleNest is a kids shopping destination offering adorable clothing, playful toys, stylish footwear and everyday accessories. We believe every child deserves comfort, happiness and quality.</p>
+</section>
+
+<footer>
+  <h2>🧸 LittleNest</h2>
+  <p>Little Things, Big Happiness!</p>
+  <p>© 2026 LittleNest. All Rights Reserved.</p>
+</footer>
+
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div id="cart-items"></div>
+  <div class="cart-total">
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+    <button class="primary-btn" onclick="checkout()">Proceed to Checkout</button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
