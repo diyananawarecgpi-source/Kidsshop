@@ -143,3 +143,9 @@ function checkout() {
 
 renderProducts();
 updateCart();
+
+document.querySelectorAll(".product-card img").forEach(img => {
+  img.addEventListener("error", function() {
+    this.style.display = "none";
+  });
+});
